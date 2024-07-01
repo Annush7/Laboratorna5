@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            font-family: Copperplate, Copperplate, Fantasy;   
+        }
+
+        div i {background-color: aqua}                
+        i {
+            background-image:linear-gradient(aqua, darkgreen) 
+        }
+        div.footer {
+            width: auto;
+            background-color: cadetblue;
+            color: white;
+            position: sticky;
+            bottom: 0;
+            left: inherit;
+            padding: 5px;
+            margin-top: 10px;
+            border: none;
+            text-align:center;
+        }
+
+        body {background-color: ghostwhite}
+        h1 {
+            color: rgba(93, 188, 194, 1.00)
+
+        }
+        h3 {
+            font-family: Helvetica, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .dropbtn {
+            background-color: lightcyan;
+            color: black;
+            padding: 20px;
+            margin-left: 10px;
+            font-size: 18px;
+            border: hidden;
+            cursor: pointer;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: lightseagreen;
+            text-align:center;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px
+            
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+
+            }
+
+                .dropdown-content a:hover {
+                    background-color: gray
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: aqua;
+        }
+        header {
+            background-image: linear-gradient(lightblue, lightcyan);
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+        }
+        nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            position:relative;
+            flex: 1;
+            background-color:cadetblue;
+            padding: 20px;
+            color:white
+        }
+     
+        #id_12 {
+            border-radius: 25px;          
+        }
+   
+        ul {
+            
+            background-color: inherit;
+            list-style-type: none;
+            padding: 10px 20px;
+            margin-top: 0px;
+            float:right;
+        }
+        .our_table {
+            display: flex;
+            flex-direction:column;
+            border:5px white;
+
+        }
+        #filterableTable td, #filterableTable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #filterableTable tr:nth-child(even) {
+            background-color: inherit;
+        }
+
+        #filterableTable tr:hover {
+            background-color: aqua;
+        }
+
+        #filterableTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: cadetblue;
+            color: darkslategrey;
+            font-family: Helvetica, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .edit-icon {
+            cursor: pointer;
+            color: cadetblue;
+            font-size: 20px;
+        }
+    </style>
+    
+    <title>Сайт волонтерської організації - Актуальні потреби гуманітарного штабу|Я хочу допомогти</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; width: 85%; min-height: 700px; border: hidden; margin: 0px auto ">
+        <header>
+            <h1>Я хочу допомогти</h1>
+        </header>
+        <section>
+            <div class="sticky">
+                <nav>
+                    <ul>
+                        <li class="class2">Зв'яжіться з нами!</li>
+                        <li><n>Telegram: t.me.@example</n></li>
+                        <li><j>Mail: example@example.com</j></li>
+                    </ul>
+                    <div class="dropdown">
+                        <button id="id_12" class="dropbtn">Підписатися</button>
+                        <div class="dropdown-content">
+                            <form action="https://exampleofthephppage.@.php" method='post' target='_self'>
+                                Ім'я:<br>
+                                <input type="text" name="firstname" value="Ваше ім'я'">
+                                <br>
+                                E-mail:<br>
+                                <input type="text" name="email" value="example@gmail.com">
+                                <br><br>
+                                <input type="submit" value="Підтвердити">
+                            </form>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <img src="https://github.com/Annush7/Web331/blob/main/68ddba615121a6e07f9b8ec26e87ce98bbd61277.jpg?raw=true" , alt="Main banner" height="200" />
+
+        <div class="our_table">
+            <h3>Актуальні потреби гуманітарного штабу</h3>
+            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Пошук за найменуванням..">
+            <table id="filterableTable">
+                <thead>
+                    <tr>
+                        <th>Найменування</th>
+                        <th>Категорія</th>
+                        <th>Статус запиту</th>
+                        <th>Редагувати дату</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Куртка зимова жіноча (розмір 52)</td>
+                        <td>Одяг</td>
+                        <td>Критична необхідність</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-21" style="display: none;" />
+                            <span class="date-display">2024-01-21</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Теплі речі дитячі (на вік 10-12 років)</td>
+                        <td>Одяг</td>
+                        <td>Закрито</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-21" style="display: none;" />
+                            <span class="date-display">2024-01-21</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Портативна батарея від 20000 мАгод</td>
+                        <td>Елементи живлення</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Постільна білизна</td>
+                        <td>Інше</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Гель для душу</td>
+                        <td>Засоби гігієни</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Зубна паста</td>
+                        <td>Засоби гігієни</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Чай (в пакетиках)</td>
+                        <td>Продукти харчування</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Кава розчинна</td>
+                        <td>Продукти харчування</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Консерви м'ясні</td>
+                        <td>Продукти харчування</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Консерви овочеві</td>
+                        <td>Продукти харчування</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Амуніція для собак (нашийники, повідці)</td>
+                        <td>Зоотовари</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Обробки від паразитів</td>
+                        <td>Зоотовари</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Переноски для тварин</td>
+                        <td>Зоотовари</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Корм для тварин</td>
+                        <td>Зоотовари</td>
+                        <td>Новий</td>
+                        <td>
+                            <input type="date" class="date-input" value="2024-01-22" style="display: none;" />
+                            <span class="date-display">2024-01-22</span>
+                            <span class="edit-icon" onclick="editDate(this)">✎</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            function filterTable() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("filterableTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+
+            function editDate(icon) {
+                var td = icon.parentElement;
+                var dateInput = td.querySelector('.date-input');
+                var dateDisplay = td.querySelector('.date-display');
+                
+                dateDisplay.style.display = 'none';
+                dateInput.style.display = 'inline';
+                dateInput.focus();
+                
+                dateInput.addEventListener('blur', function() {
+                    dateDisplay.innerText = dateInput.value;
+                    dateDisplay.style.display = 'inline';
+                    dateInput.style.display = 'none';
+                });
+            }
+        </script>
+
+        <div class="footer">
+            <a style="text-decoration: none; color: darkslategrey;" href="https://annush7.github.io/Web331/index.html">Предметна галузь</a>
+        </div>
+    </div>
+</body>
+</html>
